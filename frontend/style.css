@@ -163,10 +163,9 @@ body{
     text-align: center;
     padding: 25px 15px;
     box-shadow: 20px 20px 34px rgb(0, 0, 0, 0.03);
-    border: 1px solid #cce7d0;
+    border: 1px solid #c8aeae;
     border-radius: 4px;
     margin:15px 0;
-
   }
   #feature .fe-box:hover{
     box-shadow: 10px 10px 54px rgb(70, 62, 221, 0.1);
@@ -182,10 +181,25 @@ body{
     padding: 9px 8px 6px 8px;
     line-height: 1;
     border-radius: 4px;
-    color: brown;
+    color: rgb(1, 1, 0);
     background-color: #fddde4;
   }
-  
+  #feature .fe-box:nth-child(2) h6{
+    background-color: #ab82f3;
+  }
+  #feature .fe-box:nth-child(3) h6{
+    background-color: #92cbe7;
+  }
+  #feature .fe-box:nth-child(4) h6{
+    background-color: #ed8ed7;
+  }
+  #feature .fe-box:nth-child(5) h6{
+    background-color: #cdebbc;
+  }
+  #feature .fe-box:nth-child(6) h6{
+    background-color: #ed9682;
+  }
+
   #feature .fe-box .see-more {
     display: inline-block;
     font-size: 13px;
