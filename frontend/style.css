@@ -61,7 +61,18 @@ button.white{
   outline: none;
   transition: 0.2s;
 }
-
+button.red{
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 18px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(107, 60, 60);
+  cursor: pointer;
+  border:1px solid #fff;
+  outline: none;
+  transition: 0.2s;
+  border: 1px solid #231d1d;
+}
 body{
     width: 100%;
 }
@@ -78,7 +89,7 @@ body{
     background-color: #e3e6f3;
     box-shadow: 0 5px 15px rgba(0,0, 0, 0.06);
     z-index: 999;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
@@ -115,19 +126,121 @@ body{
     bottom: -4px;
     left: 20px;
 }
+
+.form-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 20px 30px rgba(0,0,0,0.6);
+  z-index: 1000;
+  width: 90%; 
+  max-width: 500px;
+  display: none;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-box input {
+  margin: 10px 0;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #9b9595;
+  border-radius: 5px;
+  background-color: rgb(255, 234, 234);
+}
+.form-box .form-input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.switch-form {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.switch-form a {
+  color: brown;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.form-box button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.form-link {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Eye icon styles */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%;
+}
+
+.password-wrapper i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.form-box select.form-input {
+  margin: 10px 0;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgb(255, 234, 234);
+  width: 100%;
+  box-sizing: border-box;
+  color: #69696a;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  z-index: 1001;
+}
+
+.close-btn:hover {
+  color:brown;
+}
 #hero {
-    background-color: #D7D9DB;
-    background-image: url("img/hero1.png");
-    height: 90vh;
-    width: 100%;
-    background-position: right center; 
-    background-size: contain;      
-    background-repeat: no-repeat;
-    padding: 10px 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+  background-image: url("img/hero1234.jpg");
+  background-position:top 25% right 90%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 90vh;
+  width: 100%;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 #hero h4{
