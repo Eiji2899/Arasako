@@ -61,7 +61,18 @@ button.white{
   outline: none;
   transition: 0.2s;
 }
-
+button.red{
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 18px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(107, 60, 60);
+  cursor: pointer;
+  border:1px solid #fff;
+  outline: none;
+  transition: 0.2s;
+  border: 1px solid #231d1d;
+}
 body{
     width: 100%;
 }
@@ -78,7 +89,7 @@ body{
     background-color: #e3e6f3;
     box-shadow: 0 5px 15px rgba(0,0, 0, 0.06);
     z-index: 999;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
@@ -115,19 +126,128 @@ body{
     bottom: -4px;
     left: 20px;
 }
+#mobile{
+  display: none;
+  align-items: center;
+}
+#close{
+  display:none ;
+}
+
+.form-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 20px 30px rgba(0,0,0,0.6);
+  z-index: 1000;
+  width: 90%; 
+  max-width: 500px;
+  display: none;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-box input {
+  margin: 10px 0;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #9b9595;
+  border-radius: 5px;
+  background-color: rgb(255, 234, 234);
+}
+.form-box .form-input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.switch-form {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.switch-form a {
+  color: brown;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.form-box button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.form-link {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Eye icon styles */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%;
+}
+
+.password-wrapper i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.form-box select.form-input {
+  margin: 10px 0;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgb(255, 234, 234);
+  width: 100%;
+  box-sizing: border-box;
+  color: #69696a;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  z-index: 1001;
+}
+
+.close-btn:hover {
+  color:brown;
+}
 #hero {
-    background-color: #D7D9DB;
-    background-image: url("img/hero1.png");
-    height: 90vh;
-    width: 100%;
-    background-position: right center; 
-    background-size: contain;      
-    background-repeat: no-repeat;
-    padding: 10px 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+  background-image: url("img/heroo.jpg");
+  background-position:top 25% right 90%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 90vh;
+  width: 100%;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 #hero h4{
@@ -163,10 +283,9 @@ body{
     text-align: center;
     padding: 25px 15px;
     box-shadow: 20px 20px 34px rgb(0, 0, 0, 0.03);
-    border: 1px solid #cce7d0;
+    border: 1px solid #c8aeae;
     border-radius: 4px;
     margin:15px 0;
-
   }
   #feature .fe-box:hover{
     box-shadow: 10px 10px 54px rgb(70, 62, 221, 0.1);
@@ -182,10 +301,25 @@ body{
     padding: 9px 8px 6px 8px;
     line-height: 1;
     border-radius: 4px;
-    color: brown;
+    color: rgb(1, 1, 0);
     background-color: #fddde4;
   }
-  
+  #feature .fe-box:nth-child(2) h6{
+    background-color: #ab82f3;
+  }
+  #feature .fe-box:nth-child(3) h6{
+    background-color: #92cbe7;
+  }
+  #feature .fe-box:nth-child(4) h6{
+    background-color: #ed8ed7;
+  }
+  #feature .fe-box:nth-child(5) h6{
+    background-color: #cdebbc;
+  }
+  #feature .fe-box:nth-child(6) h6{
+    background-color: #ed9682;
+  }
+
   #feature .fe-box .see-more {
     display: inline-block;
     font-size: 13px;
@@ -430,4 +564,136 @@ body{
   footer .copyright{
     width: 100%;
     text-align: center;
+  }
+  .store-badge {
+    width: 140px;
+    margin: 10px;
+    transition: transform 0.2s ease;
+  }
+  
+  .store-badge:hover {
+    transform: scale(1.05);
+  }
+
+  @media (max-width:799px){
+    .section-p1{
+      padding: 40px 40px;
+    }
+    #navbar{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      position: fixed;
+      top: 0;
+      right: -300px;
+      height: 100vh;
+      width: 300px;
+      background-color:#f6f7fc ;
+      box-shadow: 0 40px 60px rgba(0,0, 0, 0.01);
+      padding: 80px 0 0 10px;
+      transition: 0.3s;
+    }
+    #navbar.active{
+      right: 0px;
+    }
+    #navbar li{
+      margin-bottom: 25px;
+
+    }
+    #mobile{
+      display: flex;
+      align-items: center;
+    }
+    #mobile i{
+      color: black;
+      font-size: 24px;
+      padding-left: 20px;
+    }
+    #close{
+      display: initial;
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      color: #222;
+      font-size: 24px;
+    }
+    #hero {
+      height: 70vh;
+      padding: 0 80px;
+      background-position:top 30% right 30% ;
+    }
+    #feature{
+      justify-content:center ;
+    }
+    #feature .fe-box{
+      margin: 15px 5px;;
+    }
+    #product .pro-container{
+      justify-content: center;
+    }
+    #product1 .pro{
+      margin: 15px;
+    }
+    #banner{
+      height: 20vh;
+    }
+    #sm-banner .banner box{
+      min-width: 100%;
+      height: 30hv;
+    }
+    #sm-banner .banner-box2{
+      margin-top: 20px;
+    }
+    #newsletter .form{
+      width: 70%;
+    }
+  }
+
+  @media(max-width:477px){
+    .section-p1{
+      padding: 20px;
+    }
+    #header{
+      padding: 10px 30px;
+    }
+    h1{
+      font-size: 38px;
+    }
+    h2{
+      font-size: 32px;
+    }
+    #hero{
+      padding:0 20px;
+      background-position: 55%;
+    }
+    #feature{
+      justify-content: space-between;
+    }
+    #feature .fe-box{
+      width: 155px;
+      margin: 0 0 15px 0;
+    }
+    #product1 .pro{
+      width: 100%;
+    }
+    #banner{
+      height: 40vh;
+    }
+    #sm-banner .banner-box{
+      height: 40vh;
+    }
+    #sm-banner .banner-box2{
+      margin-top: 20px;
+    }
+    #newsletter{
+      padding: 40px 20px;
+    }
+    #newsletter .form{
+      width: 100%;
+    }
+    footer .cart{
+      text-align: start;
+    }
+
   }
