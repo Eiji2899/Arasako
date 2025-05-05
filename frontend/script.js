@@ -1,3 +1,4 @@
+
 //Nav bar
 const bar = document.getElementById('bar');
 const close = document.getElementById('close');
@@ -96,8 +97,37 @@ document.getElementById("loginBtn").addEventListener("click", function(e) {
       passwordHelp.style.color = "red";
     }
   });
+  document.getElementById('loginForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
 
-  (async function() {
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+  
+    try {
+      const response = await fetch('/api/loginUser', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+      });
+  
+      const result = await response.json();
+  
+      if (response.ok) {
+        alert('Login successful: ' + result.message);
+        document.getElementById("loginPopup").style.display = "none";
+      } else {
+        alert('Login failed: ' + result.message);
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      alert('An error occurred. Please try again.');
+    }
+  });
+  
+  
+  /*(async function() {
       const { text } = await( await fetch(`/api/httpTrigger1`)).json();
       document.querySelector('#name').textContent = text;
-  }());
+  }());*/
