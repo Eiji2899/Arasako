@@ -8,11 +8,7 @@
   },
   "dependencies": {
     "@azure/functions": "^4.0.0",
-    "mssql": "^9.0.0"
   },
   "devDependencies": {},
-  "main": "src/{index.js,api/*.js}",
-  "engines": {
-    "node": ">=18.0.0"
-  }
+  "main": "src/{index.js,functions/*.js}",
 }
