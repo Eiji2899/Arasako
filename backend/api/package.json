@@ -12,7 +12,7 @@
   },
   "engines": {
     "node": ">=18.0.0"
-  }
+  },
   "devDependencies": {},
   "main": "src/{index.js,functions/*.js}"
 }
