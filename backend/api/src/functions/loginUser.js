@@ -13,7 +13,7 @@ const config = {
     }
 };
 
-app.http('login', {
+app.http('loginUser', {
     methods: ['POST'],
     authLevel: 'anonymous',
     handler: async (request, context) => {
