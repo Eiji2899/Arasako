@@ -11,7 +11,7 @@
     "mssql": "^9.0.0"
   },
   "devDependencies": {},
-  "main": "src/{index.js,functions/*.js}",
+  "main": "src/{index.js,api/*.js}",
   "engines": {
     "node": ">=18.0.0"
   }
