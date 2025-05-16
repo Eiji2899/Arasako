@@ -2,8 +2,8 @@ const { app } = require('@azure/functions');
 const sql = require('mssql');
 
 const config = {
-    user: 'arasakoadmin',
-    password: 'Arasako.192sm',
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
     server: 'arasako-sql-server.database.windows.net',
     database: 'Arasako-DB',
     options: {
