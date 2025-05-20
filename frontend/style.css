@@ -613,6 +613,110 @@ body{
     transform: scale(1.05);
   }
 
+#page-header.about-header{
+  background-image: url(img/about/12345.jpeg);
+}
+#about-head{
+  display: flex;
+  align-items: center;
+}
+#about-head img{
+  width: 50%;
+  height: 450px;
+}
+#about-head div{
+  padding-left: 40px;
+}
+
+#timeline {
+  background: #f9f9f9;
+  padding: 30px 0;
+  text-align: center;
+}
+.timeline-container {
+  max-width: 800px;
+  margin: 2px auto;
+  position: relative;
+}
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: #36456a;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+}
+.timeline-item:nth-child(odd) {
+  left: 0;
+}
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+.timeline-year {
+  background: #36456a;
+  color: white;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  font-weight: bold;
+  margin: 0 auto 20px;
+  position: relative;
+  z-index: 1;
+}
+.timeline-content {
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+#reviews {
+  background: #f9f9f9;
+  padding: 80px 0;
+  text-align: center;
+}
+.reviews-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+.review-card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  width: 300px;
+  text-align: left;
+}
+.rating {
+  color: #ffc107;
+  margin-bottom: 15px;
+}
+.reviewer {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.reviewer img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
   @media (max-width:799px){
     .section-p1{
       padding: 40px 40px;
@@ -741,6 +845,17 @@ body{
     #prodetails .single-pro-details {
       width: 100%;
     }
+    #about-head{
+      flex-direction: column ;
+    }
+    #about-head img{
+      width: 100%;
+      margin-bottom: 20px;
+
+    }
+    #about-head div{
+      padding-left: 0px;
+    }
 
 
   }
@@ -804,5 +919,6 @@ body{
     line-height: 25px;
 
   }
+  
 
   
