@@ -104,7 +104,7 @@ document.getElementById("loginBtn").addEventListener("click", function(e) {
     const password = document.getElementById('login-password').value;
   
     try {
-      const response = await fetch('/loginUser', {
+      const response = await fetch('/api/loginUser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
