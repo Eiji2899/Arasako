@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Arasako</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <section id="header">
+        <a href="index.html"><img src="img/logo.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a class="active" href="dashboard.html"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="index.html" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="dashboard.html"><i class="fa-solid fa-user"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="dashboard" class="section-p1">
+        <div class="dashboard-header">
+            <div class="dashboard-hero">
+                <h2>My Dashboard</h2>
+                <p>Welcome back to your Arasako account</p>
+            </div>
+        </div>
+       
+        <div class="dashboard-cards">
+            <a href="wishlist.html" class="card">
+                <i class="fa-solid fa-heart"></i>
+                <h4>Wishlist</h4>
+                <p>3</p>
+            </a>
+            <a href="coupons.html" class="card">
+                <i class="fa-solid fa-tag"></i>
+                <h4>Coupons</h4>
+                <p>3</p>
+            </a>
+            <a href="messages.html" class="card">
+                <i class="fa-solid fa-comment"></i>
+                <h4>Messages</h4>
+                <p>3</p>
+            </a>
+        </div>
+         <div class="dashboard-content">
+            <div class="user-details">
+                <h3>Account Details</h3>
+                <div class="details-box" id="accountDetailsView">
+                    <div class="detail-row">
+                        <span>Name:</span>
+                        <p id="viewName">John Doe</p>
+                    </div>
+                    <div class="detail-row">
+                        <span>Email:</span>
+                        <p id="viewEmail">john.doe@example.com</p>
+                    </div>
+                    <div class="detail-row">
+                        <span>Phone:</span>
+                        <p id="viewPhone">+48 123 456 789</p>
+                    </div>
+                    <div class="detail-row">
+                        <span>Country:</span>
+                        <p id="viewCountry">Poland</p>
+                    </div>
+                    <button class="red" id="editProfileBtn">Edit Profile</button>
+                </div>
+            
+                <div class="edit-form" id="accountDetailsEdit" style="display: none;">
+                    <form id="profileForm">
+                        <div class="form-group">
+                            <label for="editName">Full Name</label>
+                            <input type="text" id="editName" value="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editEmail">Email</label>
+                            <input type="email" id="editEmail" value="john.doe@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editPhone">Phone</label>
+                            <input type="tel" id="editPhone" value="+48 123 456 789" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editCountry">Country</label>
+                            <select id="editCountry" required>
+                                <option value="Poland" selected>Poland</option>
+                                <option value="USA">United States</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="Germany">Germany</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="normal" id="cancelEditBtn">Cancel</button>
+                            <button type="submit" class="red">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="order-status">
+                <h3>Current Order Status</h3>
+                <div class="status-box">
+                    <div class="status-item active">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <p>Order Placed</p>
+                        <span>Jun 1, 2025</span>
+                    </div>
+                    <div class="status-item">
+                        <i class="fa-solid fa-box"></i>
+                        <p>Processing</p>
+                        <span>Expected Jun 3, 2025</span>
+                    </div>
+                    <div class="status-item">
+                        <i class="fa-solid fa-truck"></i>
+                        <p>Shipped</p>
+                        <span>Expected Jun 5, 2025</span>
+                    </div>
+                    <div class="status-item">
+                        <i class="fa-solid fa-check"></i>
+                        <p>Delivered</p>
+                        <span>Expected Jun 7, 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="previous-orders">
+            <h3>Previous Orders</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Date</th>
+                        <th>Items</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#AR-1001</td>
+                        <td>May 15, 2025</td>
+                        <td>2</td>
+                        <td>$269.00</td>
+                        <td>Delivered</td>
+                        <td><a href="#" class="view-btn">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>#AR-0987</td>
+                        <td>Apr 28, 2025</td>
+                        <td>1</td>
+                        <td>$99.00</td>
+                        <td>Delivered</td>
+                        <td><a href="#" class="view-btn">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>#AR-0954</td>
+                        <td>Apr 10, 2025</td>
+                        <td>3</td>
+                        <td>$417.00</td>
+                        <td>Delivered</td>
+                        <td><a href="#" class="view-btn">View</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+ 
+        <div class="address-book">
+            <h3>Saved Addresses</h3>
+            <div class="address-cards" id="addressCardsContainer"> 
+                <div class="address-card default">
+                    <h4>Primary Address</h4>
+                    <p>Krzyzhanowskiego 15</p>
+                    <p>Rzeszow, Poland</p>
+                    <p>+48 123 456 789</p>
+                    <button class="small-btn">Edit</button>
+                </div>
+            </div>
+            
+            <div class="edit-form" id="addressEditForm" style="display: none;">
+                <form id="addressForm">
+                    <input type="hidden" id="editAddressId">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="editAddressType">Address Type</label>
+                            <select id="editAddressType" required>
+                                <option value="home">Home</option>
+                                <option value="work">Work</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="editDefaultAddress">
+                                <input type="checkbox" id="editDefaultAddress"> Set as primary address
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="editStreet">Street Address</label>
+                        <input type="text" id="editStreet" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="editCity">City</label>
+                            <input type="text" id="editCity" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editZip">ZIP Code</label>
+                            <input type="text" id="editZip" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="editCountryAddress">Country</label>
+                        <select id="editCountryAddress" required>
+                            <option value="Poland">Poland</option>
+                            <option value="USA">United States</option>
+                            <option value="UK">United Kingdom</option>
+                            <!-- Add more countries as needed -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="editPhoneAddress">Phone Number</label>
+                        <input type="tel" id="editPhoneAddress" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="normal" id="cancelAddressEditBtn">Cancel</button>
+                        <button type="submit" class="red">Save Address</button>
+                    </div>
+                </form>
+            </div>
+    
+            <button class="normal" id="addNewAddressBtn">+ Add New Address</button>
+        </div>
+            
+        <div class="payment-methods">
+            <h3>Saved Payment Methods</h3>
+            <div class="payment-cards" id="paymentCardsContainer">
+                <div class="payment-card">
+                    <i class="fab fa-cc-visa"></i>
+                    <span>•••• •••• •••• 4242</span>
+                    <span>Exp: 05/26</span>
+                    <button class="small-btn">Remove</button>
+                </div>
+            </div>
+            <div class="edit-form" id="paymentEditForm" style="display: none;">
+                <form id="paymentForm">
+                    <input type="hidden" id="editPaymentId">
+                    <div class="form-group">
+                        <label for="editCardType">Card Type</label>
+                        <div class="card-type-selector">
+                            <input type="radio" id="visa" name="cardType" value="visa" checked>
+                            <label for="visa"><i class="fab fa-cc-visa"></i> Visa</label>
+
+                            <input type="radio" id="mastercard" name="cardType" value="mastercard">
+                            <label for="mastercard"><i class="fab fa-cc-mastercard"></i> Mastercard</label>
+
+                            <input type="radio" id="amex" name="cardType" value="amex">
+                            <label for="amex"><i class="fab fa-cc-amex"></i> American Express</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="editCardNumber">Card Number</label>
+                        <input type="text" id="editCardNumber" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="editCardName">Name on Card</label>
+                            <input type="text" id="editCardName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editCardExpiry">Expiry Date</label>
+                            <input type="text" id="editCardExpiry" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editCardCvv">CVV</label>
+                            <input type="text" id="editCardCvv" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="editDefaultPayment">
+                            <input type="checkbox" id="editDefaultPayment"> Set as default payment method
+                        </label>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="normal" id="cancelPaymentEditBtn">Cancel</button>
+                        <button type="submit" class="red">Save Payment Method</button>
+                    </div>
+                </form>
+            </div>
+    
+    <button class="normal" id="addNewPaymentBtn">+ Add Payment Method</button>
+        </div>
+
+        <div class="coupons-section">
+            <div class="section-header">
+                <h3>Your Coupons</h3>    
+                <a href="coupons.html" class="see-more">See More <i class="fas fa-chevron-right"></i></a>
+                <style>
+                    .see-more {
+                    color: brown;
+                    text-decoration: none;
+                    font-weight: 600;
+                    font-size: 14px;
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    transition: all 0.3s ease;
+                }
+
+                .see-more i {
+                    font-size: 12px;
+                    transition: transform 0.3s ease;
+                }
+                </style>
+            </div>
+                <div class="coupons-grid">
+
+                    <div class="coupon-card active">
+                        <div class="coupon-details">
+                            <div class="coupon-value">20% OFF</div>
+                            <div class="coupon-info">
+                                <h4>SUMMER2024</h4>
+                                <p>Valid until: Aug 31, 2025</p>
+                            </div>
+                        </div>
+                        <button class="copy-btn" onclick="copyCouponCode('SUMMER2024')">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                        <div class="coupon-badge">Active</div>
+                    </div>
+
+                    <div class="coupon-card active">
+                        <div class="coupon-details">
+                            <div class="coupon-value">12% OFF</div>
+                            <div class="coupon-info">
+                                <h4>RABATPL</h4>
+                                <p>Valid until: Aug 15, 2025</p>
+                            </div>
+                        </div>
+                        <button class="copy-btn" onclick="copyCouponCode('SUMMER2024')">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                        <div class="coupon-badge">Active</div>
+                    </div>
+
+                    <div class="coupon-card expiring">
+                        <div class="coupon-details">
+                            <div class="coupon-value">$15 OFF</div>
+                            <div class="coupon-info">
+                                <h4>WELCOME15</h4>
+                                <p>Expires in: 3 days</p>
+                            </div>
+                        </div>
+                        <button class="copy-btn" onclick="copyCouponCode('WELCOME15')">
+                        <i class="fas fa-copy"></i> Copy
+                        </button>
+                        <div class="coupon-badge">Expiring</div>
+                    </div>
+                </div>
+
+                
+        </div>
+        
+        
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/logo.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Adress: </strong>Krzyzhanowskiego 15, Rzeszow, Poland </p>
+            <p><strong>Phone: </strong>+48 123 456 789 </p>
+            <p><strong>Hourse: </strong>10.00-18.00, Mon - Sat  </p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class = "fab fa-facebook-f"></i>
+                    <i class = "fab fa-twitter"></i>
+                    <i class = "fab fa-instagram"></i>
+                    <i class = "fab fa-pinterest-p"></i>
+                    <i class = "fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delievery information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">About Us</a>
+        </div>
+        <div class="col">
+            <h4>My account </h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My wishlist</a>
+            <a href="#">Track My Orders</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <a href="https://apps.apple.com" target="_blank">
+                    <img src="img/Products/appstore.png" alt="App Store" class="store-badge">
+                </a>
+                <a href="https://play.google.com/store" target="_blank">
+                    <img src="img/Products/googleplay.png" alt="Google Play" class="store-badge">
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>2025, Arasako</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyCouponCode(code) {
+        navigator.clipboard.writeText(code).then(() => {
+        // Show copied notification
+        const notification = document.createElement('div');
+        notification.className = 'copy-notification';
+        notification.textContent = 'Copied!';
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.remove();
+        }, 2000);
+         });
+        }
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const editProfileBtn = document.getElementById('editProfileBtn');
+        const cancelEditBtn = document.getElementById('cancelEditBtn');
+        const profileForm = document.getElementById('profileForm');
+        const accountDetailsView = document.getElementById('accountDetailsView');
+        const accountDetailsEdit = document.getElementById('accountDetailsEdit');
+        
+        // Show edit form
+        editProfileBtn.addEventListener('click', function() {
+            accountDetailsView.style.display = 'none';
+            accountDetailsEdit.style.display = 'block';
+            
+            
+            document.getElementById('editName').value = document.getElementById('viewName').textContent;
+            document.getElementById('editEmail').value = document.getElementById('viewEmail').textContent;
+            document.getElementById('editPhone').value = document.getElementById('viewPhone').textContent;
+            document.getElementById('editCountry').value = document.getElementById('viewCountry').textContent;
+        });
+        
+        // Cancel editing
+        cancelEditBtn.addEventListener('click', function() {
+            accountDetailsView.style.display = 'block';
+            accountDetailsEdit.style.display = 'none';
+        });
+        
+        // Save changes
+        profileForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('editName').value;
+            const email = document.getElementById('editEmail').value;
+            const phone = document.getElementById('editPhone').value;
+            const country = document.getElementById('editCountry').value;
+            
+            document.getElementById('viewName').textContent = name;
+            document.getElementById('viewEmail').textContent = email;
+            document.getElementById('viewPhone').textContent = phone;
+            document.getElementById('viewCountry').textContent = country;
+            
+            const notification = document.createElement('div');
+            notification.className = 'copy-notification';
+            notification.textContent = 'Profile updated successfully!';
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 2000);
+            
+            accountDetailsView.style.display = 'block';
+            accountDetailsEdit.style.display = 'none';
+        });
+        
+        // Coupon copy function
+        function copyCouponCode(code) {
+            navigator.clipboard.writeText(code).then(() => {
+                const notification = document.createElement('div');
+                notification.className = 'copy-notification';
+                notification.textContent = 'Copied!';
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.remove();
+                }, 2000);
+            });
+        }
+        
+        window.copyCouponCode = copyCouponCode;
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+    // Profile editing functionality
+    const editProfileBtn = document.getElementById('editProfileBtn');
+    const cancelEditBtn = document.getElementById('cancelEditBtn');
+    const profileForm = document.getElementById('profileForm');
+    const accountDetailsView = document.getElementById('accountDetailsView');
+    const accountDetailsEdit = document.getElementById('accountDetailsEdit');
+    
+    if (editProfileBtn) {
+        editProfileBtn.addEventListener('click', function() {
+            accountDetailsView.style.display = 'none';
+            accountDetailsEdit.style.display = 'block';
+            
+            document.getElementById('editName').value = document.getElementById('viewName').textContent;
+            document.getElementById('editEmail').value = document.getElementById('viewEmail').textContent;
+            document.getElementById('editPhone').value = document.getElementById('viewPhone').textContent;
+            document.getElementById('editCountry').value = document.getElementById('viewCountry').textContent;
+        });
+    }
+    
+    if (cancelEditBtn) {
+        cancelEditBtn.addEventListener('click', function() {
+            accountDetailsView.style.display = 'block';
+            accountDetailsEdit.style.display = 'none';
+        });
+    }
+    
+    if (profileForm) {
+        profileForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('editName').value;
+            const email = document.getElementById('editEmail').value;
+            const phone = document.getElementById('editPhone').value;
+            const country = document.getElementById('editCountry').value;
+            
+            document.getElementById('viewName').textContent = name;
+            document.getElementById('viewEmail').textContent = email;
+            document.getElementById('viewPhone').textContent = phone;
+            document.getElementById('viewCountry').textContent = country;
+            
+            showNotification('Profile updated successfully!');
+            
+            accountDetailsView.style.display = 'block';
+            accountDetailsEdit.style.display = 'none';
+        });
+    }
+
+    // Sample data
+    const userAddresses = [
+        {
+            id: 'addr1',
+            type: 'home',
+            street: 'Krzyzhanowskiego 15',
+            city: 'Rzeszow',
+            zip: '35-001',
+            country: 'Poland',
+            phone: '+48 123 456 789',
+            isDefault: true
+        }
+    ];
+
+    const userPayments = [
+        {
+            id: 'pay1',
+            type: 'visa',
+            last4: '4242',
+            expiry: '05/26',
+            name: 'John Doe',
+            isDefault: true
+        }
+    ];
+
+    // Initialize address and payment functionality
+    initializeAddressBook();
+    initializePaymentMethods();
+
+    function initializeAddressBook() {
+        const addNewAddressBtn = document.getElementById('addNewAddressBtn');
+        const addressEditForm = document.getElementById('addressEditForm');
+        const addressForm = document.getElementById('addressForm');
+        const cancelAddressEditBtn = document.getElementById('cancelAddressEditBtn');
+        const addressCardsContainer = document.getElementById('addressCardsContainer');
+        
+        if (!addressCardsContainer) return;
+
+        renderAddressCards();
+
+        if (addNewAddressBtn) {
+            addNewAddressBtn.addEventListener('click', () => {
+                resetAddressForm();
+                addressEditForm.style.display = 'block';
+                window.scrollTo({ top: addressEditForm.offsetTop - 20, behavior: 'smooth' });
+            });
+        }
+
+        if (cancelAddressEditBtn) {
+            cancelAddressEditBtn.addEventListener('click', () => {
+                addressEditForm.style.display = 'none';
+            });
+        }
+
+        if (addressForm) {
+            addressForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                saveAddress();
+            });
+        }
+
+        function renderAddressCards() {
+            addressCardsContainer.innerHTML = '';
+            
+            userAddresses.forEach(address => {
+                const addressCard = document.createElement('div');
+                addressCard.className = `address-card ${address.isDefault ? 'default' : ''}`;
+                addressCard.dataset.id = address.id;
+                
+                addressCard.innerHTML = `
+                    <h4>${address.isDefault ? 'Primary Address' : address.type.charAt(0).toUpperCase() + address.type.slice(1)}</h4>
+                    <p>${address.street}</p>
+                    <p>${address.city}, ${address.zip}</p>
+                    <p>${address.country}</p>
+                    <p>${address.phone}</p>
+                    <button class="small-btn edit-address-btn">Edit</button>
+                    ${!address.isDefault ? '<button class="small-btn remove-address-btn">Remove</button>' : ''}
+                `;
+                
+                addressCardsContainer.appendChild(addressCard);
+            });
+
+            // Add event listeners to edit/remove buttons
+            document.querySelectorAll('.edit-address-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const addressId = e.target.closest('.address-card').dataset.id;
+                    editAddress(addressId);
+                });
+            });
+
+            document.querySelectorAll('.remove-address-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const addressId = e.target.closest('.address-card').dataset.id;
+                    removeAddress(addressId);
+                });
+            });
+        }
+
+        function editAddress(addressId) {
+            const address = userAddresses.find(a => a.id === addressId);
+            if (!address) return;
+
+            document.getElementById('editAddressId').value = address.id;
+            document.getElementById('editAddressType').value = address.type;
+            document.getElementById('editStreet').value = address.street;
+            document.getElementById('editCity').value = address.city;
+            document.getElementById('editZip').value = address.zip;
+            document.getElementById('editCountryAddress').value = address.country;
+            document.getElementById('editPhoneAddress').value = address.phone;
+            document.getElementById('editDefaultAddress').checked = address.isDefault;
+
+            addressEditForm.style.display = 'block';
+            window.scrollTo({ top: addressEditForm.offsetTop - 20, behavior: 'smooth' });
+        }
+
+        function resetAddressForm() {
+            document.getElementById('editAddressId').value = '';
+            document.getElementById('editAddressType').value = 'home';
+            document.getElementById('editStreet').value = '';
+            document.getElementById('editCity').value = '';
+            document.getElementById('editZip').value = '';
+            document.getElementById('editCountryAddress').value = 'Poland';
+            document.getElementById('editPhoneAddress').value = '';
+            document.getElementById('editDefaultAddress').checked = false;
+        }
+
+        function saveAddress() {
+            const addressId = document.getElementById('editAddressId').value;
+            const isNew = !addressId;
+            const isDefault = document.getElementById('editDefaultAddress').checked;
+
+            const addressData = {
+                id: isNew ? 'addr' + (userAddresses.length + 1) : addressId,
+                type: document.getElementById('editAddressType').value,
+                street: document.getElementById('editStreet').value,
+                city: document.getElementById('editCity').value,
+                zip: document.getElementById('editZip').value,
+                country: document.getElementById('editCountryAddress').value,
+                phone: document.getElementById('editPhoneAddress').value,
+                isDefault: isDefault
+            };
+
+            if (isDefault) {
+                userAddresses.forEach(a => a.isDefault = false);
+            }
+
+            if (isNew) {
+                userAddresses.push(addressData);
+            } else {
+                const index = userAddresses.findIndex(a => a.id === addressId);
+                if (index !== -1) {
+                    userAddresses[index] = addressData;
+                }
+            }
+
+            renderAddressCards();
+            addressEditForm.style.display = 'none';
+            showNotification('Address saved successfully!');
+        }
+
+        function removeAddress(addressId) {
+            if (confirm('Are you sure you want to remove this address?')) {
+                const index = userAddresses.findIndex(a => a.id === addressId);
+                if (index !== -1) {
+                    userAddresses.splice(index, 1);
+                    renderAddressCards();
+                    showNotification('Address removed successfully!');
+                }
+            }
+        }
+    }
+
+    function initializePaymentMethods() {
+        const addNewPaymentBtn = document.getElementById('addNewPaymentBtn');
+        const paymentEditForm = document.getElementById('paymentEditForm');
+        const paymentForm = document.getElementById('paymentForm');
+        const cancelPaymentEditBtn = document.getElementById('cancelPaymentEditBtn');
+        const paymentCardsContainer = document.getElementById('paymentCardsContainer');
+        
+        if (!paymentCardsContainer) return;
+
+        renderPaymentCards();
+
+        if (addNewPaymentBtn) {
+            addNewPaymentBtn.addEventListener('click', () => {
+                resetPaymentForm();
+                paymentEditForm.style.display = 'block';
+                window.scrollTo({ top: paymentEditForm.offsetTop - 20, behavior: 'smooth' });
+            });
+        }
+
+        if (cancelPaymentEditBtn) {
+            cancelPaymentEditBtn.addEventListener('click', () => {
+                paymentEditForm.style.display = 'none';
+            });
+        }
+
+        if (paymentForm) {
+            paymentForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                savePayment();
+            });
+        }
+
+        function renderPaymentCards() {
+            paymentCardsContainer.innerHTML = '';
+            
+            userPayments.forEach(payment => {
+                const paymentCard = document.createElement('div');
+                paymentCard.className = 'payment-card';
+                paymentCard.dataset.id = payment.id;
+                
+                paymentCard.innerHTML = `
+                    <i class="fab fa-cc-${payment.type}"></i>
+                    <div>
+                        <span>•••• •••• •••• ${payment.last4}</span><br>
+                        <span>Exp: ${payment.expiry}</span>
+                    </div>
+                    <button class="small-btn edit-payment-btn">Edit</button>
+                    ${!payment.isDefault ? '<button class="small-btn remove-payment-btn">Remove</button>' : ''}
+                `;
+                
+                paymentCardsContainer.appendChild(paymentCard);
+            });
+
+            // Add event listeners to edit/remove buttons
+            document.querySelectorAll('.edit-payment-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const paymentId = e.target.closest('.payment-card').dataset.id;
+                    editPayment(paymentId);
+                });
+            });
+
+            document.querySelectorAll('.remove-payment-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const paymentId = e.target.closest('.payment-card').dataset.id;
+                    removePayment(paymentId);
+                });
+            });
+        }
+
+        function editPayment(paymentId) {
+            const payment = userPayments.find(p => p.id === paymentId);
+            if (!payment) return;
+
+            document.getElementById('editPaymentId').value = payment.id;
+            document.getElementById(payment.type).checked = true;
+            document.getElementById('editCardNumber').value = `•••• •••• •••• ${payment.last4}`;
+            document.getElementById('editCardName').value = payment.name;
+            document.getElementById('editCardExpiry').value = payment.expiry;
+            document.getElementById('editDefaultPayment').checked = payment.isDefault;
+
+            paymentEditForm.style.display = 'block';
+            window.scrollTo({ top: paymentEditForm.offsetTop - 20, behavior: 'smooth' });
+        }
+
+        function resetPaymentForm() {
+            document.getElementById('editPaymentId').value = '';
+            document.getElementById('visa').checked = true;
+            document.getElementById('editCardNumber').value = '';
+            document.getElementById('editCardName').value = '';
+            document.getElementById('editCardExpiry').value = '';
+            document.getElementById('editCardCvv').value = '';
+            document.getElementById('editDefaultPayment').checked = false;
+        }
+
+        function savePayment() {
+            const paymentId = document.getElementById('editPaymentId').value;
+            const isNew = !paymentId;
+            const isDefault = document.getElementById('editDefaultPayment').checked;
+            const cardType = document.querySelector('input[name="cardType"]:checked').value;
+            
+            // In a real app, you would validate the card number, expiry, and CVV here
+            const cardNumber = document.getElementById('editCardNumber').value;
+            const last4 = cardNumber.slice(-4);
+            
+            const paymentData = {
+                id: isNew ? 'pay' + (userPayments.length + 1) : paymentId,
+                type: cardType,
+                last4: last4,
+                expiry: document.getElementById('editCardExpiry').value,
+                name: document.getElementById('editCardName').value,
+                isDefault: isDefault
+            };
+
+            if (isDefault) {
+                userPayments.forEach(p => p.isDefault = false);
+            }
+
+            if (isNew) {
+                userPayments.push(paymentData);
+            } else {
+                const index = userPayments.findIndex(p => p.id === paymentId);
+                if (index !== -1) {
+                    userPayments[index] = paymentData;
+                }
+            }
+
+            renderPaymentCards();
+            paymentEditForm.style.display = 'none';
+            showNotification('Payment method saved successfully!');
+        }
+
+        function removePayment(paymentId) {
+            if (confirm('Are you sure you want to remove this payment method?')) {
+                const index = userPayments.findIndex(p => p.id === paymentId);
+                if (index !== -1) {
+                    userPayments.splice(index, 1);
+                    renderPaymentCards();
+                    showNotification('Payment method removed successfully!');
+                }
+            }
+        }
+    }
+
+    // Helper function
+    function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.className = 'copy-notification';
+        notification.textContent = message;
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.remove();
+        }, 2000);
+    }
+
+    // Coupon copy function
+    window.copyCouponCode = function(code) {
+        navigator.clipboard.writeText(code).then(() => {
+            const notification = document.createElement('div');
+            notification.className = 'copy-notification';
+            notification.textContent = 'Copied!';
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 2000);
+        });
+    }
+});
+    
+
+
+    
+    
+
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Wishlist</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <section id="header">
+        <a href="index.html"><img src="img/logo.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a class="active" href="dashboard.html"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="index.html" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="dashboard.html"><i class="fa-solid fa-user"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+    
+
+    <section class="wishlist-section section-p1">
+        <h2>Your Wishlist</h2>
+        <a href="dashboard.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Dashboard
+        </a>
+        <div class="wishlist-container">
+            <div class="wishlist-item" data-product-id="1">
+                <img src="img/Products/1.png" alt="Product">
+                <div class="wishlist-details">
+                    <h5>Cotton T-Shirt</h5>
+                    <p>Size: M</p>
+                    <p>Color: Blue</p>
+                    <p class="price">$170</p>
+                </div>
+                <div class="wishlist-actions">
+                    <button class="normal remove-btn"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="wishlist-container">
+            <div class="wishlist-item" data-product-id="2">
+                <img src="img/Products/2.png" alt="Product">
+                <div class="wishlist-details">
+                    <h5>Trendy trousers</h5>
+                    <p>Size: S</p>
+                    <p>Color: Haki</p>
+                    <p class="price">$599</p>
+                </div>
+                <div class="wishlist-actions">
+                    <button class="normal remove-btn"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="wishlist-container">
+            <div class="wishlist-item" data-product-id="3">
+                <img src="img/Products/3.png" alt="Product">
+                <div class="wishlist-details">
+                    <h5>Men's Belts</h5>
+                    <p>Size: 49</p>
+                    <p>Color: Black</p>
+                    <p class="price">$49</p>
+                </div>
+                <div class="wishlist-actions">
+                    <button class="normal remove-btn"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="section-p1">
+      <div class="col">
+        <img class="logo" src="img/logo.png" alt="">
+        <h4>Contact</h4>
+        <p><strong>Adress: </strong>Krzyzhanowskiego 15, Rzeszow, Poland </p>
+        <p><strong>Phone: </strong>+48 123 456 789 </p>
+        <p><strong>Hourse: </strong>10.00-18.00, Mon - Sat  </p>
+        <div class="follow">
+          <h4>Follow us</h4>
+          <div class="icon">
+            <i class = "fab fa-facebook-f"></i>
+            <i class = "fab fa-twitter"></i>
+            <i class = "fab fa-instagram"></i>
+            <i class = "fab fa-pinterest-p"></i>
+            <i class = "fab fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <h4>About</h4>
+        <a href="#">About Us</a>
+        <a href="#">Delievery information</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">About Us</a>
+      </div>
+      <div class="col">
+        <h4>My account </h4>
+        <a href="#">Sign In</a>
+        <a href="#">View Cart</a>
+        <a href="#">My wishlist</a>
+        <a href="#">Track My Orders</a>
+        <a href="#">Help</a>
+      </div>
+
+        <!--<div class="col install">
+          <h4>Install App</h4>
+          <p> From App Store or Google Play</p><div class="row">
+            <img src = "img/Products/download.jpg" alt="">
+          </div>
+        </div>-->
+        <div class="col install">
+          <h4>Install App</h4>
+          <p>From App Store or Google Play</p>
+          <div class="row">
+            <a href="https://apps.apple.com" target="_blank">
+              <img src="img/Products/appstore.png" alt="App Store" class="store-badge">
+            </a>
+            <a href="https://play.google.com/store" target="_blank">
+              <img src="img/Products/googleplay.png" alt="Google Play" class="store-badge">
+            </a>
+          </div>
+        </div>
+        
+        <div class="copyright">
+          <p>2025, Arasako</p> </div>
+      </div>
+    </footer>
+   
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Select all remove buttons
+    const removeButtons = document.querySelectorAll('.remove-btn');
+    
+    // Add click event to each button
+    removeButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Find the closest wishlist item
+            const wishlistItem = this.closest('.wishlist-item');
+            const productId = wishlistItem.dataset.productId;
+            
+            // Confirm before removal (optional)
+            const confirmRemove = confirm('Are you sure you want to remove this item from your wishlist?');
+            
+            if (confirmRemove) {
+                // Add removal animation
+                wishlistItem.style.transition = 'all 0.3s ease';
+                wishlistItem.style.opacity = '0';
+                wishlistItem.style.transform = 'translateX(-100px)';
+                
+                // Remove from DOM after animation completes
+                setTimeout(() => {
+                    wishlistItem.remove();
+                    
+                    // Optional: Update wishlist count in dashboard
+                    updateWishlistCount(-1);
+                    
+                    // Optional: Send request to server to update database
+                    removeFromServerWishlist(productId);
+                }, 300);
+            }
+        });
+    });
+    
+    // Function to update wishlist count (optional)
+    function updateWishlistCount(change) {
+        const wishlistCountElement = document.querySelector('.dashboard-cards a[href="wishlist.html"] p');
+        if (wishlistCountElement) {
+            const currentCount = parseInt(wishlistCountElement.textContent);
+            wishlistCountElement.textContent = currentCount + change;
+        }
+    }
+    
+    // Function to update server (optional - requires backend API)
+    function removeFromServerWishlist(productId) {
+        fetch('/api/wishlist/remove', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ productId: productId })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    }
+});
+    </script>
+
+</body>
+</html>

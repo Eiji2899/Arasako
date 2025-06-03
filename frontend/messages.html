@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Messages</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <section id="header">
+        <a href="index.html"><img src="img/logo.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a class="active" href="dashboard.html"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="index.html" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="dashboard.html"><i class="fa-solid fa-user"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section class="messages-section section-p1">
+        <div class="messages-header">
+            <h2>Your Messages <span class="message-count">(3)</span></h2>
+            <a href="dashboard.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </a>
+        </div>
+
+        <div class="messages-container">
+            <div class="message-item" data-message-id="1">
+                <div class="message-sender">
+                    <img src="img/about/23.jpg" alt="Customer Support">
+                    <div>
+                        <h5>ArasakoTeam</h5>
+                        <p class="message-time">Today, 10:30 AM</p>
+                    </div>
+                </div>
+                <div class="message-content">
+                    <p>Your order #12345 has been shipped and will arrive within 3 business days.</p>
+                </div>
+                <div class="message-actions">
+                    <button class="normal reply-btn"><i class="fas fa-reply"></i> Reply</button>
+                    <button class="normal delete-btn"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+
+            <div class="message-item" data-message-id="2">
+                <div class="message-sender">
+                    <img src="img/contact/p22.jpg" alt="Bradd Smith">
+                    <div>
+                        <h5>Bradd Smith</h5>
+                        <p class="message-time">Yesterday, 2:15 PM</p>
+                    </div>
+                </div>
+                <div class="message-content">
+                    <p>Thank you for your recent purchase! How would you rate your shopping experience?</p>
+                </div>
+                <div class="message-actions">
+                    <button class="normal reply-btn"><i class="fas fa-reply"></i> Reply</button>
+                    <button class="normal delete-btn"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+
+            <!-- Message 3 -->
+            <div class="message-item" data-message-id="3">
+                <div class="message-sender">
+                    <img src="img/contact/p33.jpg" alt="Emma Nowak">
+                    <div>
+                        <h5>Emma Nowak</h5>
+                        <p class="message-time">May 12, 9:45 AM</p>
+                    </div>
+                </div>
+                <div class="message-content">
+                    <p>Your return request has been approved. The refund will be processed within 5-7 business days.</p>
+                </div>
+                <div class="message-actions">
+                    <button class="normal reply-btn"><i class="fas fa-reply"></i> Reply</button>
+                    <button class="normal delete-btn"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="message-actions">
+
+        <!-- Reply Form (initially hidden) -->
+        <div id="replyModal" class="reply-modal">
+          <div class="reply-modal-content">
+            <span class="close-reply-modal">&times;</span>
+            <h3>Reply to <span id="replyRecipient"></span></h3>
+
+            <form id="replyForm">
+              <div class="form-group">
+                <label for="replySubject">Subject</label>
+                <input type="text" id="replySubject" required>
+              </div>
+
+              <div class="form-group">
+                <label for="replyMessage">Your Message</label>
+                <textarea id="replyMessage" rows="6" required></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="normal cancel-reply">Cancel</button>
+                <button type="submit" class="normal send-reply">Send Reply</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Empty State -->
+        <div class="empty-messages" style="display: none;">
+            <i class="far fa-envelope-open"></i>
+            <h3>No messages yet</h3>
+            <p>Your inbox is currently empty. You'll see messages here when you receive them.</p>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/logo.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Adress: </strong>Krzyzhanowskiego 15, Rzeszow, Poland </p>
+            <p><strong>Phone: </strong>+48 123 456 789 </p>
+            <p><strong>Hourse: </strong>10.00-18.00, Mon - Sat  </p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class = "fab fa-facebook-f"></i>
+                    <i class = "fab fa-twitter"></i>
+                    <i class = "fab fa-instagram"></i>
+                    <i class = "fab fa-pinterest-p"></i>
+                    <i class = "fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delievery information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">About Us</a>
+        </div>
+        <div class="col">
+            <h4>My account </h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My wishlist</a>
+            <a href="#">Track My Orders</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <a href="https://apps.apple.com" target="_blank">
+                    <img src="img/Products/appstore.png" alt="App Store" class="store-badge">
+                </a>
+                <a href="https://play.google.com/store" target="_blank">
+                    <img src="img/Products/googleplay.png" alt="Google Play" class="store-badge">
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>2025, Arasako</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Delete message functionality
+    const deleteButtons = document.querySelectorAll('.delete-btn');
+    
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const messageItem = this.closest('.message-item');
+            const messageId = messageItem.dataset.messageId;
+            
+            if (confirm('Are you sure you want to delete this message?')) {
+                messageItem.style.transition = 'all 0.3s ease';
+                messageItem.style.opacity = '0';
+                messageItem.style.height = '0';
+                messageItem.style.margin = '0';
+                messageItem.style.padding = '0';
+                messageItem.style.border = 'none';
+                
+                setTimeout(() => {
+                    messageItem.remove();
+                    updateMessageCount();
+                    checkEmptyState();
+                }, 300);
+            }
+        });
+    });
+
+    // Reply functionality
+    const replyButtons = document.querySelectorAll('.reply-btn');
+    const replyModal = document.getElementById('replyModal');
+    const closeModal = document.querySelector('.close-reply-modal');
+    const cancelReply = document.querySelector('.cancel-reply');
+    const replyForm = document.getElementById('replyForm');
+    
+    replyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const messageItem = this.closest('.message-item');
+            const senderName = messageItem.querySelector('h5').textContent;
+            const messageContent = messageItem.querySelector('.message-content p').textContent;
+            
+            document.getElementById('replyRecipient').textContent = senderName;
+            
+            const shortSubject = messageContent.length > 30 
+                ? messageContent.substring(0, 30) + '...' 
+                : messageContent;
+            document.getElementById('replySubject').value = `Re: ${shortSubject}`;
+            
+            replyModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    function closeReplyModal() {
+        replyModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    closeModal.addEventListener('click', closeReplyModal);
+    cancelReply.addEventListener('click', closeReplyModal);
+
+    window.addEventListener('click', (e) => {
+        if (e.target === replyModal) {
+            closeReplyModal();
+        }
+    });
+
+    replyForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const subject = document.getElementById('replySubject').value;
+        const message = document.getElementById('replyMessage').value;
+        const recipient = document.getElementById('replyRecipient').textContent;
+        
+        console.log('Sending reply to:', recipient);
+        console.log('Subject:', subject);
+        console.log('Message:', message);
+        
+        setTimeout(() => {
+            closeReplyModal();
+            alert('Your reply has been sent successfully!');
+            replyForm.reset();
+        }, 1000);
+    });
+
+    function updateMessageCount() {
+        const count = document.querySelectorAll('.message-item').length;
+        document.querySelector('.message-count').textContent = `(${count})`;
+        
+        const dashboardCount = document.querySelector('.dashboard-cards a[href="messages.html"] p');
+        if (dashboardCount) {
+            dashboardCount.textContent = count;
+        }
+    }
+
+    function checkEmptyState() {
+        const messagesContainer = document.querySelector('.messages-container');
+        const emptyState = document.querySelector('.empty-messages');
+        
+        if (messagesContainer.children.length === 0) {
+            emptyState.style.display = 'block';
+        } else {
+            emptyState.style.display = 'none';
+        }
+    }
+});
+</script>
+
+   
+</body>
+</html>

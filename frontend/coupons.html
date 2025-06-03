@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Coupons - Arasako</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <section id="header">
+        <a href="index.html"><img src="img/logo.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="dashboard.html"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="index.html" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="dashboard.html"><i class="fa-solid fa-user"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section class="coupons-page section-p1">
+        <div class="page-header">
+            <h2>Your Coupons</h2>
+            <a href="dashboard.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </a>
+        </div>
+
+    <section class="coupons-section section-p1">
+        <div class="coupons-container">
+            <div class="coupon-category">
+                <h3><i class="fas fa-tag"></i> Active Coupons <span class="count-badge">3</span></h3>
+                <div class="coupons-grid">
+                    <div class="coupon-card active">
+                        <div class="coupon-header">
+                            <div class="coupon-value">20% OFF</div>
+                            <div class="coupon-badge">Active</div>
+                        </div>
+                        <div class="coupon-body">
+                            <h4>SUMMER2024</h4>
+                            <p class="coupon-desc">Summer special discount on all items</p>
+                            <div class="coupon-meta">
+                                <span><i class="far fa-calendar-alt"></i> Valid until: Aug 31, 2025</span>
+                                <span><i class="fas fa-shopping-cart"></i> Min. purchase: $50</span>
+                            </div>
+                        </div>
+                        <div class="coupon-footer">
+                            <button class="copy-btn" onclick="copyCouponCode('SUMMER2024')">
+                                <i class="fas fa-copy"></i> Copy Code
+                            </button>
+                            <a href="shop.html" class="shop-btn">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="coupon-card active">
+                        <div class="coupon-header">
+                            <div class="coupon-value">$12 OFF</div>
+                            <div class="coupon-badge">Active</div>
+                        </div>
+                        <div class="coupon-body">
+                            <h4>RABATPL</h4>
+                            <p class="coupon-desc">Spesial discount in Poland</p>
+                            <div class="coupon-meta">
+                                <span><i class="far fa-calendar-alt"></i> Valid until: Aug 15, 2025</span>
+                                <span><i class="fas fa-shopping-cart"></i> Min. purchase: $60</span>
+                            </div>
+                        </div>
+                        <div class="coupon-footer">
+                            <button class="copy-btn" onclick="copyCouponCode('WELCOME15')">
+                                <i class="fas fa-copy"></i> Copy Code
+                            </button>
+                            <a href="shop.html" class="shop-btn">Shop Now</a>
+                        </div>
+                    </div>
+
+                    
+                    <div class="coupon-card active">
+                        <div class="coupon-header">
+                            <div class="coupon-value">$15 OFF</div>
+                            <div class="coupon-badge">Active</div>
+                        </div>
+                        <div class="coupon-body">
+                            <h4>WELCOME15</h4>
+                            <p class="coupon-desc">New customer discount</p>
+                            <div class="coupon-meta">
+                                <span><i class="far fa-calendar-alt"></i> Expires in: 3 days</span>
+                                <span><i class="fas fa-shopping-cart"></i> Min. purchase: $100</span>
+                            </div>
+                        </div>
+                        <div class="coupon-footer">
+                            <button class="copy-btn" onclick="copyCouponCode('WELCOME15')">
+                                <i class="fas fa-copy"></i> Copy Code
+                            </button>
+                            <a href="shop.html" class="shop-btn">Shop Now</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Expired/Used Coupons -->
+            <div class="coupon-category">
+                <h3><i class="far fa-clock"></i> Expired/Used Coupons</h3>
+                <div class="coupons-grid">
+                   
+                    <div class="coupon-card expired">
+                        <div class="coupon-header">
+                            <div class="coupon-value">10% OFF</div>
+                            <div class="coupon-badge">Expired</div>
+                        </div>
+                        <div class="coupon-body">
+                            <h4>SPRING10</h4>
+                            <p class="coupon-desc">Spring season special</p>
+                            <div class="coupon-meta">
+                                <span><i class="far fa-calendar-alt"></i> Expired on: May 31, 2024</span>
+                            </div>
+                        </div>
+                    </div>
+
+               
+                    <div class="coupon-card used">
+                        <div class="coupon-header">
+                            <div class="coupon-value">$5 OFF</div>
+                            <div class="coupon-badge">Used</div>
+                        </div>
+                        <div class="coupon-body">
+                            <h4>FIRST5</h4>
+                            <p class="coupon-desc">First purchase discount</p>
+                            <div class="coupon-meta">
+                                <span><i class="far fa-calendar-alt"></i> Used on: Apr 15, 2024</span>
+                                <span><i class="fas fa-receipt"></i> Order: #AR-0954</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How to use -->
+        <div class="coupon-guide">
+            <h3><i class="fas fa-question-circle"></i> How to Use Your Coupons</h3>
+            <ol class="guide-steps">
+                <li>Click "Copy Code" on the coupon you want to use</li>
+                <li>Proceed to checkout from your cart</li>
+                <li>Paste the code in the "Promo Code" field</li>
+                <li>The discount will be applied automatically</li>
+            </ol>
+            <div class="note">
+                <p><strong>Note:</strong> Only one coupon can be used per order. Some coupons may have minimum purchase requirements.</p>
+            </div>
+        </div>
+    </section>
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/logo.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Adress: </strong>Krzyzhanowskiego 15, Rzeszow, Poland </p>
+            <p><strong>Phone: </strong>+48 123 456 789 </p>
+            <p><strong>Hourse: </strong>10.00-18.00, Mon - Sat  </p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class = "fab fa-facebook-f"></i>
+                    <i class = "fab fa-twitter"></i>
+                    <i class = "fab fa-instagram"></i>
+                    <i class = "fab fa-pinterest-p"></i>
+                    <i class = "fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delievery information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">About Us</a>
+        </div>
+        <div class="col">
+            <h4>My account </h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My wishlist</a>
+            <a href="#">Track My Orders</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <a href="https://apps.apple.com" target="_blank">
+                    <img src="img/Products/appstore.png" alt="App Store" class="store-badge">
+                </a>
+                <a href="https://play.google.com/store" target="_blank">
+                    <img src="img/Products/googleplay.png" alt="Google Play" class="store-badge">
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>2025, Arasako</p>
+        </div>
+    </footer>
+
+
+    <script>
+        // Enhanced copy function with your existing notification style
+        function copyCouponCode(code) {
+            navigator.clipboard.writeText(code).then(() => {
+                const notification = document.createElement('div');
+                notification.className = 'copy-notification';
+                notification.textContent = 'Copied: ' + code;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.classList.add('fade-out');
+                    setTimeout(() => notification.remove(), 300);
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
